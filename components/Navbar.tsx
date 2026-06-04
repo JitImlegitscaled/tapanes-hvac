@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import { useLanguage } from '@/lib/LanguageContext'
 import Image from 'next/image'
 
@@ -8,6 +9,8 @@ export default function Navbar() {
   const { tr, lang, setLang } = useLanguage()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -15,8 +18,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (pathname === '/' && window.location.hash) {
+      const id = window.location.hash.slice(1)
+      const el = document.getElementById(id)
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100)
+    }
+  }, [pathname])
+
   const scrollTo = (id: string) => {
     setMenuOpen(false)
+    if (pathname !== '/') {
+      router.push(`/#${id}`)
+      return
+    }
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
