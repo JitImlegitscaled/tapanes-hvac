@@ -113,9 +113,6 @@ export default function AboutClient() {
           <div className="font-display font-900 text-white text-4xl sm:text-5xl mb-3">
             🇨🇺 {tr.footer.spanishBadge}
           </div>
-          <p className="font-body text-white/80 text-lg">
-            {tr.hero.english}
-          </p>
         </div>
       </section>
     </>

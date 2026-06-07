@@ -17,7 +17,6 @@ export const t = {
       cta1: 'Call Now: 813-578-1529',
       cta2: 'Get a Free Quote',
       spanish: '🇨🇺 We speak Spanish',
-      english: '🇺🇸 English by message',
     },
     trust: {
       title: 'Why Families Trust Us',
@@ -131,7 +130,6 @@ export const t = {
       cta1: 'Llámanos: 813-578-1529',
       cta2: 'Cotización Gratis',
       spanish: '🇨🇺 Hablamos Español',
-      english: '🇺🇸 Inglés por mensaje',
     },
     trust: {
       title: 'Por Qué las Familias Confían en Nosotros',

@@ -66,7 +66,7 @@ export default function ServiceAreasClient() {
               {tr.areas.cta}
             </h2>
             <p className="font-body text-white/60 text-lg mb-8">
-              {tr.footer.spanishBadge} · {tr.hero.english}
+              {tr.footer.spanishBadge}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

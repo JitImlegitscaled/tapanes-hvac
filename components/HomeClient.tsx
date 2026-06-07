@@ -128,9 +128,6 @@ export default function HomeClient() {
               <span className="bg-white/10 border border-white/20 text-white/80 px-3 py-1 rounded-full text-sm font-body">
                 {tr.hero.spanish}
               </span>
-              <span className="bg-white/10 border border-white/20 text-white/80 px-3 py-1 rounded-full text-sm font-body">
-                {tr.hero.english}
-              </span>
             </div>
 
             {/* Trust badge — visible above fold on desktop */}
