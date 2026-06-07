@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, FormEvent } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/LanguageContext'
 
@@ -159,13 +160,26 @@ export default function HomeClient() {
             </div>
           </div>
 
-          {/* Right: styled hero image placeholder */}
+          {/* Right: hero image */}
           <div className="relative hidden lg:block">
             <div
               className="relative rounded-2xl overflow-hidden"
               style={{ boxShadow: '0 24px 64px rgba(10,31,68,0.6), 0 4px 16px rgba(10,31,68,0.3)' }}
             >
-              <StyledImagePlaceholder text="Hero Image Coming Soon" aspectClass="aspect-[6/5]" />
+              <div className="relative w-full aspect-[6/5]">
+                <Image
+                  src="/images/hero.jpg"
+                  alt={
+                    lang === 'es'
+                      ? 'Técnico de Tapanes Enterprise dando servicio a una unidad de aire acondicionado residencial en Tampa, Florida'
+                      : 'Tapanes Enterprise HVAC technician servicing a residential AC unit in Tampa, Florida'
+                  }
+                  fill
+                  className="object-cover object-center"
+                  priority={true}
+                  quality={90}
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-transparent to-transparent mix-blend-multiply pointer-events-none" />
             </div>
           </div>
